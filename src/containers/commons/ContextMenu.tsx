@@ -64,6 +64,7 @@ const ContextMenu = ({
    * @param e.path
    */
   const onRemove = useCallback(({ path }: any) => {
+    if (!path) return;
     if (!menuRef.current) return;
 
     if ([...path].includes(menuRef.current)) return;

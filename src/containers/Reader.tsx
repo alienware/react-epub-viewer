@@ -46,7 +46,12 @@ const Reader = ({ url, loadingView }: Props) => {
     fontSize: 18,
     lineHeight: 1.4,
     marginHorizontal: 15,
-    marginVertical: 5
+    marginVertical: 5,
+    userSelect: 'none',
+    MozUserSelect: 'none',
+    KhtmlUserSelect: 'none',
+    WebkitUserSelect: 'none',
+    MsUserSelect: 'none',
   });
 
   const [bookOption, setBookOption] = useState<BookOption>({
@@ -58,16 +63,14 @@ const Reader = ({ url, loadingView }: Props) => {
 	const [navControl, onNavToggle] = useMenu(navRef, 300.);
 	const [optionControl, onOptionToggle, emitEvent] = useMenu(optionRef, 300);
 	const [learningControl, onLearningToggle] = useMenu(learningRef, 300);
-	const { 
-		selection, 
-		onSelection, 
+	const {
+		selection,
+		onSelection,
 		onClickHighlight,
 		onAddHighlight,
 		onRemoveHighlight,
 		onUpdateHighlight
 	} = useHighlight(viewerRef, setIsContextMenu, bookStyle, bookOption.flow);
-
-
 
 	/**
 	 * Change Epub book information
