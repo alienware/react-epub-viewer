@@ -1,174 +1,7 @@
 diff --git a/node_modules/react-epub-viewer/lib/modules/reactViewer/ReactViewer.js b/node_modules/react-epub-viewer/lib/modules/reactViewer/ReactViewer.js
-index 0615b0c..3cb6670 100644
+index 0615b0c..7ca6837 100644
 --- a/node_modules/react-epub-viewer/lib/modules/reactViewer/ReactViewer.js
 +++ b/node_modules/react-epub-viewer/lib/modules/reactViewer/ReactViewer.js
-@@ -193,97 +193,97 @@ var ReactViewer = function ReactViewer(_ref, ref) {
-    * - Fire after the Epubjs selected event. [about 300ms]
-    */
- 
--  var onSelected = (0, _react.useCallback)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
--    var iframe, iframeWin, selection_, selectionText, cfiRange, contents;
--    return regeneratorRuntime.wrap(function _callee$(_context) {
--      while (1) {
--        switch (_context.prev = _context.next) {
--          case 0:
--            if (ref.current) {
--              _context.next = 2;
--              break;
--            }
-+  // var onSelected = (0, _react.useCallback)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-+  //   var iframe, iframeWin, selection_, selectionText, cfiRange, contents;
-+  //   return regeneratorRuntime.wrap(function _callee$(_context) {
-+  //     while (1) {
-+  //       switch (_context.prev = _context.next) {
-+  //         case 0:
-+  //           if (ref.current) {
-+  //             _context.next = 2;
-+  //             break;
-+  //           }
- 
--            return _context.abrupt("return");
-+  //           return _context.abrupt("return");
- 
--          case 2:
--            iframe = ref.current.querySelector('iframe');
-+  //         case 2:
-+  //           iframe = ref.current.querySelector('iframe');
- 
--            if (iframe) {
--              _context.next = 5;
--              break;
--            }
-+  //           if (iframe) {
-+  //             _context.next = 5;
-+  //             break;
-+  //           }
- 
--            return _context.abrupt("return");
-+  //           return _context.abrupt("return");
- 
--          case 5:
--            iframeWin = iframe.contentWindow;
-+  //         case 5:
-+  //           iframeWin = iframe.contentWindow;
- 
--            if (iframeWin) {
--              _context.next = 8;
--              break;
--            }
-+  //           if (iframeWin) {
-+  //             _context.next = 8;
-+  //             break;
-+  //           }
- 
--            return _context.abrupt("return");
-+  //           return _context.abrupt("return");
- 
--          case 8:
--            selection_ = iframeWin.getSelection();
-+  //         case 8:
-+  //           selection_ = iframeWin.getSelection();
- 
--            if (selection_) {
--              _context.next = 11;
--              break;
--            }
-+  //           if (selection_) {
-+  //             _context.next = 11;
-+  //             break;
-+  //           }
- 
--            return _context.abrupt("return");
-+  //           return _context.abrupt("return");
- 
--          case 11:
--            selectionText = selection_.toString();
-+  //         case 11:
-+  //           selectionText = selection_.toString();
- 
--            if (!(selectionText === "")) {
--              _context.next = 14;
--              break;
--            }
-+  //           if (!(selectionText === "")) {
-+  //             _context.next = 14;
-+  //             break;
-+  //           }
- 
--            return _context.abrupt("return");
-+  //           return _context.abrupt("return");
- 
--          case 14:
--            _context.next = 16;
--            return new Promise(function (resolve) {
--              return setTimeout(function () {
--                return resolve(currentSelection.current.cfiRange);
--              }, 350);
--            });
-+  //         case 14:
-+  //           _context.next = 16;
-+  //           return new Promise(function (resolve) {
-+  //             return setTimeout(function () {
-+  //               return resolve(currentSelection.current.cfiRange);
-+  //             }, 350);
-+  //           });
- 
--          case 16:
--            cfiRange = _context.sent;
-+  //         case 16:
-+  //           cfiRange = _context.sent;
- 
--            if (cfiRange) {
--              _context.next = 19;
--              break;
--            }
-+  //           if (cfiRange) {
-+  //             _context.next = 19;
-+  //             break;
-+  //           }
- 
--            return _context.abrupt("return");
-+  //           return _context.abrupt("return");
- 
--          case 19:
--            contents = currentSelection.current.contents;
-+  //         case 19:
-+  //           contents = currentSelection.current.contents;
- 
--            if (contents) {
--              _context.next = 22;
--              break;
--            }
-+  //           if (contents) {
-+  //             _context.next = 22;
-+  //             break;
-+  //           }
- 
--            return _context.abrupt("return");
-+  //           return _context.abrupt("return");
- 
--          case 22:
--            onSelection && onSelection(cfiRange, contents);
-+  //         case 22:
-+  //           onSelection && onSelection(cfiRange, contents);
- 
--          case 23:
--          case "end":
--            return _context.stop();
--        }
--      }
--    }, _callee);
--  })), [ref, onSelection]);
-+  //         case 23:
-+  //         case "end":
-+  //           return _context.stop();
-+  //       }
-+  //     }
-+  //   }, _callee);
-+  // })), [ref, onSelection]);
-   /** Ref checker */
- 
-   (0, _react.useEffect)(function () {
 @@ -342,7 +342,19 @@ var ReactViewer = function ReactViewer(_ref, ref) {
        },
        "p": {
@@ -190,7 +23,7 @@ index 0615b0c..3cb6670 100644
        }
      };
      rendition.flow(bookOption.flow);
-@@ -388,6 +400,70 @@ var ReactViewer = function ReactViewer(_ref, ref) {
+@@ -388,6 +400,77 @@ var ReactViewer = function ReactViewer(_ref, ref) {
        return rendition.off("mouseup", onSelected);
      };
    }, [rendition, onSelected]);
@@ -201,7 +34,7 @@ index 0615b0c..3cb6670 100644
 +    e.preventDefault();
 +  };
 +
-+  var onSelected = (0, _react.useCallback)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
++  var onChangePage = (0, _react.useCallback)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
 +    var iframe, iframeDoc, disabledElements;
 +    disabledElements = ["h1", "h2", "h3", "h4", "h5", "h6", "div", "span", "p"];
 +    return regeneratorRuntime.wrap(function _callee$(_context) {
@@ -236,19 +69,21 @@ index 0615b0c..3cb6670 100644
 +            return _context.abrupt("return");
 +
 +          case 8:
-+            iframeDoc.addEventListener("contextmenu", disableEvent);
-+            disabledElements.forEach(function (i) {
-+              var elementsToDisable = iframeDoc.body.getElementsByTagName(i);
-+              for (let j = 0; j < elementsToDisable.length; j++) {
-+                elementsToDisable[j].addEventListener("selectstart", disableEvent);
-+                elementsToDisable[j].addEventListener("mousedown", disableEvent);
-+                elementsToDisable[j].addEventListener("cut", disableEvent);
-+                elementsToDisable[j].addEventListener("copy", disableEvent);
-+                elementsToDisable[j].addEventListener("paste", disableEvent);
-+                elementsToDisable[j].addEventListener("drag", disableEvent);
-+                elementsToDisable[j].addEventListener("drop", disableEvent);
-+              }
-+            });
++            setInterval(() => {
++              iframeDoc.addEventListener("contextmenu", disableEvent);
++              disabledElements.forEach(function (i) {
++                var elementsToDisable = iframeDoc.body.getElementsByTagName(i);
++                for (let j = 0; j < elementsToDisable.length; j++) {
++                  // elementsToDisable[j].addEventListener("selectstart", disableEvent);
++                  // elementsToDisable[j].addEventListener("mousedown", disableEvent);
++                  elementsToDisable[j].addEventListener("cut", disableEvent);
++                  elementsToDisable[j].addEventListener("copy", disableEvent);
++                  elementsToDisable[j].addEventListener("paste", disableEvent);
++                  // elementsToDisable[j].addEventListener("drag", disableEvent);
++                  // elementsToDisable[j].addEventListener("drop", disableEvent);
++                }
++              });
++            }, 2000);
 +
 +          case 9:
 +          case "end":
@@ -256,7 +91,12 @@ index 0615b0c..3cb6670 100644
 +        }
 +      }
 +    }, _callee);
-+  })), [ref, onSelection]);
++  })), [ref, onPageChange]);
++
++  (0, _react.useEffect)(function () {
++    if (!rendition) return;
++    onChangePage();
++  }, [rendition, onChangePage]);
 +
    return /*#__PURE__*/(0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
      children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_EpubViewer.default, {

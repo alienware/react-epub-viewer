@@ -47,11 +47,11 @@ const Reader = ({ url, loadingView }: Props) => {
     lineHeight: 1.4,
     marginHorizontal: 15,
     marginVertical: 5,
-    userSelect: 'none',
-    MozUserSelect: 'none',
-    KhtmlUserSelect: 'none',
-    WebkitUserSelect: 'none',
-    MsUserSelect: 'none',
+    // userSelect: 'none',
+    // MozUserSelect: 'none',
+    // KhtmlUserSelect: 'none',
+    // WebkitUserSelect: 'none',
+    // MsUserSelect: 'none',
   });
 
   const [bookOption, setBookOption] = useState<BookOption>({

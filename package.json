@@ -38,6 +38,7 @@
     "precompile": "react-scripts test --watchAll=false --passWithNoTests && yarn clean",
     "compile": "babel src --out-dir lib --extensions .ts,.tsx",
     "postcompile": "cp -r ./src/types ./lib/types",
+    "preinstall": "npx patch-package react-epub-viewer; rm -rf node_modules/",
     "postinstall": "npx patch-package"
   },
   "dependencies": {
